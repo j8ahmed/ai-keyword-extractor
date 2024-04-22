@@ -1,3 +1,5 @@
+![Screenshot of app](./screenshots/screenshot.jpg)
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -115,6 +117,22 @@ curl \
 ```
 
 
+### Random
+
+David's Teas:
+
+[Smores tea](https://www.davidstea.com/ca_en/shop/smores-chai/10638DT01VAR0042394.html)
+Organic earl grey
+vanilla grey
+
+Fallout 2
+
+- [Fallout 2 Restoration Project, updated](https://github.com/BGforgeNet/Fallout2_Restoration_Project)
+
+Bad courses
+
+- [Master the Coding Interview: Big Tech (FAANG) Interviews](https://www.udemy.com/course/master-the-coding-interview-big-tech-faang-interviews/?couponCode=LETSLEARNNOWPP)
+- [Zero to Mastery - Liz says it is unethical - maybe check it out?](https://zerotomastery.io/courses/)
 
 
 ---
@@ -131,10 +149,13 @@ Started On: 2024-04-21
 - [Build a Keyword Extractor: React + OpenAI API + Chakra UI - Traversy Media](https://www.traversymedia.com/blog/ai-keyword-extractor-with-react-openai)
 - [OpenAI Dev](https://platform.openai.com/usage)
 - [Google Gemini AI API](https://aistudio.google.com/app/prompts/new_freeform)
-- []()
-- []()
+- [Google AI Studio quickstart](https://ai.google.dev/gemini-api/docs/ai-studio-quickstart)
+- [Google AI Studio API Keys](https://aistudio.google.com/app/apikey)
 - []()
 
+
+- [Code Buddy Club Schedule - Toronto JS](https://github.com/torontojs/code-buddy-club/blob/main/Code%20Buddy%20Club%20Schedule.md)
+- [Toronto JS Give a talk - application form](https://docs.google.com/forms/d/e/1FAIpQLSc_ZA0ElHLsMedjdQjZechw5H1RJNhG1DZxtFTsqhkdut3eFg/viewform)
 - [Color Mode - ChakraUI Docs](https://v2.chakra-ui.com/docs/styled-system/color-mode)
 - [useColorModeValue Hook - Color Mode - ChakraUI Docs](https://v2.chakra-ui.com/docs/styled-system/color-mode#usecolormodevalue)
 - [Default Theme - ChakraUI Docs](https://v2.chakra-ui.com/docs/styled-system/theme)
@@ -145,5 +166,6 @@ Started On: 2024-04-21
 - [Smart Swatch - Small app for building theme colors](https://smart-swatch.netlify.app/#009F9F)
 - [Themera - Chakra UI color scheme builder app](https://themera.vercel.app/)
 - [Palette Generator + API for Tailwind CSS](https://www.tints.dev/brand/00A9A9)
+- []()
 - []()
 - []()
