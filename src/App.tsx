@@ -13,7 +13,12 @@ export default function App() {
     const [isOpen, setIsOpen] = useState(false);
     const [loading, setLoading] = useState(false);
 
+<<<<<<< HEAD
     const extractKeywords = async (sourceText) => {
+=======
+    const extractKeywords = async (text) => {
+        console.log(text)
+>>>>>>> 8bf827669bbfb8d0f401c18eb9f8a33d4b4972e8
         setLoading(true);
         setIsOpen(true);
 
@@ -21,6 +26,7 @@ export default function App() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+<<<<<<< HEAD
             },
             body: JSON.stringify({
                 contents: [
@@ -76,6 +82,45 @@ export default function App() {
         //    setKeywords("Demo: JavaScript, Data, OpenAI, API");
         //    setLoading(false);
         //}, 5000)
+=======
+                Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+            },
+            body: JSON.stringify({
+                messages: [
+                    {
+                        role: 'user',
+                        content:
+                            'Extract keywords from this text. Make the first letter of each word uppercase and separate with commas\n\n' +
+                            text,
+                    },
+                ],
+                model: 'gpt-3.5-turbo',
+                prompt:
+                    'Extract keywords from this text. Make the first letter of every word uppercase and separate with commas:\n\n' +
+                    text +
+                    '',
+                temperature: 0.5,
+                max_tokens: 60,
+                top_p: 1.0,
+                frequency_penalty: 0.8,
+                presence_penalty: 0.0,
+            }),
+        };
+
+        //try {
+        //    const response = await fetch(import.meta.env.VITE_OPENAI_API_URL, options);
+        //    const json = await response.json();
+        //    console.log(json.choices[0].text.trim());
+        //    setKeywords(json.choices[0].text.trim());
+        //    setLoading(false);
+        //} catch (error) {
+        //    console.error(error);
+        //}
+        setTimeout(() => {
+            setKeywords("Demo: JavaScript, Data, OpenAI, API");
+            setLoading(false);
+        }, 5000)
+>>>>>>> 8bf827669bbfb8d0f401c18eb9f8a33d4b4972e8
     }
 
     const closeModal = () => {
