@@ -6,7 +6,7 @@ export default function Footer(){
     <Box marginTop={50}>
       <Flex justifyContent='center' alignItems='center'>
       {/* <Image src={logo} marginRight={3} /> */}
-        <Text>Powered By Open AI</Text>
+        <Text>Powered By Google Gemini</Text>
       </Flex>
     </Box>
   );

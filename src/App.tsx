@@ -13,8 +13,7 @@ export default function App() {
     const [isOpen, setIsOpen] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    const extractKeywords = async (text) => {
-        console.log(text)
+    const extractKeywords = async (sourceText) => {
         setLoading(true);
         setIsOpen(true);
 
@@ -22,43 +21,61 @@ export default function App() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
             },
             body: JSON.stringify({
-                messages: [
+                contents: [
                     {
-                        role: 'user',
-                        content:
-                            'Extract keywords from this text. Make the first letter of each word uppercase and separate with commas\n\n' +
-                            text,
-                    },
+                        parts: [
+                            {
+                                text: "Extract keywords from this text. Make the first letter of each word uppercase and separate with commas\n\n" + sourceText
+                            }
+                        ]
+                    }
                 ],
-                model: 'gpt-3.5-turbo',
-                prompt:
-                    'Extract keywords from this text. Make the first letter of every word uppercase and separate with commas:\n\n' +
-                    text +
-                    '',
-                temperature: 0.5,
-                max_tokens: 60,
-                top_p: 1.0,
-                frequency_penalty: 0.8,
-                presence_penalty: 0.0,
+                generationConfig: {
+                    temperature: 0.5,
+                    topK: 1,
+                    topP: 1,
+                    maxOutputTokens: 2048,
+                    stopSequences: []
+                },
+                safetySettings: [
+                    {
+                        category: "HARM_CATEGORY_HARASSMENT",
+                        threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                    },
+                    {
+                        category: "HARM_CATEGORY_HATE_SPEECH",
+                        threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                    },
+                    {
+                        category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                        threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                    },
+                    {
+                        category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+                        threshold: "BLOCK_MEDIUM_AND_ABOVE"
+                    }
+                ]
             }),
         };
 
-        //try {
-        //    const response = await fetch(import.meta.env.VITE_OPENAI_API_URL, options);
-        //    const json = await response.json();
-        //    console.log(json.choices[0].text.trim());
-        //    setKeywords(json.choices[0].text.trim());
-        //    setLoading(false);
-        //} catch (error) {
-        //    console.error(error);
-        //}
-        setTimeout(() => {
-            setKeywords("Demo: JavaScript, Data, OpenAI, API");
+        try {
+            const {VITE_GEMINI_API_URL, VITE_GEMINI_API_KEY} = import.meta.env
+            const url = VITE_GEMINI_API_URL + "?key=" + VITE_GEMINI_API_KEY
+            const response = await fetch(url, options);
+            const json = await response.json();
+            const data = json.candidates[0].content.parts[0].text.trim();
+            setKeywords(data);
             setLoading(false);
-        }, 5000)
+        } catch (error) {
+            console.error(error);
+        }
+        //Used for testing UI Modal without wasting API calls
+        //setTimeout(() => {
+        //    setKeywords("Demo: JavaScript, Data, OpenAI, API");
+        //    setLoading(false);
+        //}, 5000)
     }
 
     const closeModal = () => {
