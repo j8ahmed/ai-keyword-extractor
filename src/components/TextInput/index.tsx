@@ -25,7 +25,7 @@ export default function TextInput({ extractKeywords }){
   return (
     <>
       <Textarea
-        bg='blue.400'
+        bg='teal.900'
         padding={4}
         marginTop={6}
         height={200}
@@ -35,11 +35,11 @@ export default function TextInput({ extractKeywords }){
       />
 
       <Button
-        bg='blue.500'
+        bg='teal.600'
         color='white'
         marginTop={4}
         width='100%'
-        _hover={{ bg: 'blue.700' }}
+        _hover={{ bg: 'teal.900' }}
         onClick={submitText}
       >
         Extract Keywords

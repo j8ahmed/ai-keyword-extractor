@@ -24,7 +24,7 @@ export default function KeywordsModal({ keywords, loading, isOpen, closeModal })
 
                     <ModalBody display='flex' alignItems='center' justifyContent='center'>
                         {loading ? (
-                            <CircularProgress isIndeterminate color='blue.300' />
+                            <CircularProgress isIndeterminate color='teal.300' />
                         ) : (
                         <Text>{keywords}</Text>
                         )}
@@ -32,7 +32,7 @@ export default function KeywordsModal({ keywords, loading, isOpen, closeModal })
 
                     <ModalFooter>
 
-                    <Button colorScheme='blue' mr={3} onClick={closeModal}>
+                    <Button colorScheme='teal' mr={3} onClick={closeModal}>
                         Close
                     </Button>
                 </ModalFooter>

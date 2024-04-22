@@ -83,7 +83,7 @@ export default function App() {
     };
 
     return (
-        <Box bg="blue.600" color="white" height="100vh" paddingTop="130">
+        <Box bg="teal.800" color="white" height="100vh" paddingTop="130">
             <Container centerContent>
                 <Header />
 
